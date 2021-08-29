@@ -1,5 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Catamaran&family=Inconsolata:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
 body {
+  min-height: 100vh;
   margin: 0;
+  font-family: Catamaran;
   padding: 0;
-  font-family: sans-serif;
+  --c-black: #000;
+  --c-white: #fff;
+  --c-grey: #757575;
+  --c-orange: #e34705;
+}
+
+h1,
+h2 {
+  font-family: Inconsolata;
+  letter-spacing: 0.1em;
+}
+
+a {
+  color: var(--c-orange);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+button {
+  font-family: Catamaran;
+  background-color: var(--c-white);
+  cursor: pointer;
+  text-align: center;
+  border: none;
+}
+
+.pageHeader {
+  padding: 0 28px;
+}
+.btnSelect {
+  background-color: var(--c-grey);
+  color: var(--c-white);
+}
+
+.btnProceed {
+  font-size: 24px;
+  font-weight: 800;
+  background-color: var(--c-orange);
+  color: var(--c-white);
+  border-radius: 4px;
+  border: 2px solid var(--c-orange);
+}
+
+.btnCancel {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--c-grey);
 }
