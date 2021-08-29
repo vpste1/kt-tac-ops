@@ -7,20 +7,21 @@ import { DeckCreationWizard } from "../features/deck-creation-wizard/deck-creati
 export function Create() {
   const { viewedCard, setViewedCard } = useViewedCard();
   return (
-    <div className="pageHeader">
-      {viewedCard ? (
+    <div>
+      {viewedCard && (
         <TacOpsCard
           cardInfo={viewedCard}
           onClose={() => setViewedCard(null)}
-          toggleCardSelection={() => console.log("selected!")}
+          selectable
         />
-      ) : (
-        <>
+      )}
+      <>
+        <div className="pageHeader">
           <h1>CREATE</h1>
           <Link to="/">Back</Link>
-          <DeckCreationWizard />
-        </>
-      )}
+        </div>
+        <DeckCreationWizard />
+      </>
     </div>
   );
 }

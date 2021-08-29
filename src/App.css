@@ -19,6 +19,7 @@ h1,
 h2 {
   font-family: Inconsolata;
   letter-spacing: 0.1em;
+  margin-bottom: 0;
 }
 
 a {
@@ -38,6 +39,7 @@ button {
 .pageHeader {
   padding: 0 28px;
 }
+
 .btnSelect {
   background-color: var(--c-grey);
   color: var(--c-white);

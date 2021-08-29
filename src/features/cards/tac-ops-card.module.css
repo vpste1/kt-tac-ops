@@ -1,5 +1,9 @@
 .container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   padding: 10px;
+  background-color: white;
 }
 
 .title {

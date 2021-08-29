@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelectedCards } from "../../context/selected-cards-context";
 import { insertShapes } from "../../utils/insert-shapes";
 import styles from "./tac-ops-card.module.css";
 
@@ -19,14 +20,28 @@ interface TacOpsCard {
 interface TacOpsCardProperties {
   cardInfo: TacOpsCard;
   onClose: () => void;
-  toggleCardSelection?: () => void;
+  selectable: boolean;
 }
 
 export function TacOpsCard({
   cardInfo,
   onClose,
-  toggleCardSelection,
+  selectable,
 }: TacOpsCardProperties) {
+  const { selectedCards, setSelectedCards } = useSelectedCards();
+  const isSelected = selectable && selectedCards.includes(cardInfo.title);
+  const toggleCardSelection = () => {
+    if (isSelected) {
+      // remove card
+      setSelectedCards(
+        selectedCards.filter((storedTitle) => storedTitle !== cardInfo.title)
+      );
+    } else {
+      // add card
+      setSelectedCards([...selectedCards, cardInfo.title]);
+    }
+    onClose();
+  };
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{cardInfo.title}</h2>
@@ -52,9 +67,9 @@ export function TacOpsCard({
         <button className="btnCancel" onClick={onClose}>
           CLOSE
         </button>
-        {toggleCardSelection && (
+        {selectable && (
           <button className="btnProceed" onClick={toggleCardSelection}>
-            ADD TO DECK
+            {isSelected ? "REMOVE" : "ADD TO DECK"}
           </button>
         )}
       </div>
