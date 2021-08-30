@@ -16,6 +16,17 @@
     "react-router-dom": "^5.2.1"
   },
   "devDependencies": {
+    "aws-cdk": "^1.111.0",
+    "@aws-cdk/assert": "1.111.0",
+    "@aws-cdk/aws-certificatemanager": "1.111.0",
+    "@aws-cdk/aws-cloudfront": "1.111.0",
+    "@aws-cdk/aws-route53": "1.111.0",
+    "@aws-cdk/aws-route53-targets": "1.111.0",
+    "@aws-cdk/aws-s3": "1.111.0",
+    "@aws-cdk/aws-s3-deployment": "1.111.0",
+    "@aws-cdk/core": "1.111.0",
+    "envalid": "^7.2.1",
+    "source-map-support": "^0.5.16",
     "@types/webpack-env": "^1.16.2",
     "@types/node": "^16.0.0",
     "@types/react": "^17.0.13",
