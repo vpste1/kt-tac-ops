@@ -38,7 +38,7 @@ export function TacOpsCard({
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{cardInfo.title}</h2>
-      <p>{cardInfo.text}</p>
+      <p>{insertShapes(cardInfo.text)}</p>
       <ul>
         {cardInfo.points.map((point, i) => (
           <li key={i}>{insertShapes(point)}</li>
