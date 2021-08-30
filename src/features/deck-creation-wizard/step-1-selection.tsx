@@ -24,7 +24,7 @@ export function Step1Selection({ onNext, onBack }) {
     >
       {selectedCards.length > 0 && (
         <>
-          Currently selected cards:
+          Currently selected cards (tap to open and remove):
           <ul>
             {selectedCards.map((card) => (
               <li key={card.title}>

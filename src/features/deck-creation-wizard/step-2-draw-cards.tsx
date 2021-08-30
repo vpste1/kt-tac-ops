@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import styles from "./step-2-draw-cards.module.css";
 import { useDrawnCards } from "../../context/drawn-cards-context";
 import { useSelectedCards } from "../../context/selected-cards-context";
 import { useViewedCard } from "../../context/view-card-context";
@@ -29,14 +30,14 @@ export function Step2DrawCards({ onNext }) {
       {drawnCards.length > 0 &&
         drawnCards.map((card) => <div>{card.title}</div>)}
       {drawnCards.length < 3 && shuffledCards.length === 6 ? (
-        <div>
+        <div className={styles.selectionContainer}>
           <button
             className="btnSelect"
             onClick={() => setViewedCard(shuffledCards[drawnCards.length * 2])}
           >
             {shuffledCards[drawnCards.length * 2].title}
           </button>
-          or
+          <p>or</p>
           <button
             className="btnSelect"
             onClick={() =>

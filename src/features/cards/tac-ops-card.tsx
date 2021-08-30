@@ -41,7 +41,7 @@ export function TacOpsCard({
       <p>{cardInfo.text}</p>
       <ul>
         {cardInfo.points.map((point, i) => (
-          <li key={i}>{point}</li>
+          <li key={i}>{insertShapes(point)}</li>
         ))}
       </ul>
       {cardInfo.actions &&

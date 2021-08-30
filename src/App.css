@@ -24,6 +24,7 @@ h3 {
 }
 
 h1 {
+  text-align: center;
   font-size: 26px;
 }
 
@@ -44,6 +45,8 @@ button {
 .btnSelect {
   background-color: var(--c-grey);
   color: var(--c-white);
+  font-size: 20px;
+  margin: 4px 0;
 }
 
 .btnProceed {
