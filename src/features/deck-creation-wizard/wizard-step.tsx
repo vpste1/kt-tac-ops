@@ -1,12 +1,26 @@
 import React from "react";
 import styles from "./wizard-step.module.css";
 
-export function WizardStep({ children, onNext, onBack }) {
+interface WizardStepProperties {
+  children: React.ReactNode;
+  onNext?: () => void;
+  onNextDisabled?: boolean;
+  onBack?: () => void;
+  onBackDisabled?: boolean;
+}
+
+export function WizardStep({
+  children,
+  onNext,
+  onNextDisabled,
+  onBack,
+  onBackDisabled,
+}: WizardStepProperties) {
   return (
     <div className={styles.container}>
       {children}
       <div className={styles.navigationButtons}>
-        {onBack ? (
+        {onBack && !onBackDisabled ? (
           <button onClick={onBack} className="btnCancel">
             BACK
           </button>
@@ -14,7 +28,7 @@ export function WizardStep({ children, onNext, onBack }) {
           <span />
         )}
 
-        {onNext ? (
+        {onNext && !onNextDisabled ? (
           <button onClick={onNext} className="btnProceed">
             NEXT
           </button>

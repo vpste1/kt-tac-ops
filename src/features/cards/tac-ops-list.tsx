@@ -1,45 +1,44 @@
 import React from "react";
 import styles from "./tac-ops-list.module.css";
 import { useViewedCard } from "../../context/view-card-context";
-import { TacOpsCard } from "../../types/card";
+import { TacOpsCardData } from "../../types/card";
 import { useSelectedCards } from "../../context/selected-cards-context";
 export function TacOpsList({ data, selectable }) {
   const { setViewedCard } = useViewedCard();
   const { selectedCards } = useSelectedCards();
-  const openTacOp = (title: TacOpsCard) => {
-    setViewedCard(title);
+  const openTacOp = (card: TacOpsCardData) => {
+    setViewedCard(card);
   };
   return (
-    <div>
-      {selectable && (
-        <ul>
-          {selectedCards.map((title) => (
-            <li key={title}>{title}</li>
+    <>
+      {data.map((set) => (
+        <React.Fragment key={set.title}>
+          <h2 className={styles.setTitle}>{set.title}</h2>
+          {set.content.map((category) => (
+            <React.Fragment key={category.title}>
+              <h3 className={styles.categoryTitle}>{category.title}</h3>
+              <ul className={styles.list}>
+                {category.tacOps.map((tacOp: TacOpsCardData) => (
+                  <li key={tacOp.title}>
+                    {
+                      <button
+                        className="btnSelect"
+                        onClick={() => openTacOp(tacOp)}
+                      >
+                        {tacOp.title}
+                      </button>
+                    }
+                    {selectable &&
+                      selectedCards
+                        .map((card) => card.title)
+                        .includes(tacOp.title) && <span>✔</span>}
+                  </li>
+                ))}
+              </ul>
+            </React.Fragment>
           ))}
-        </ul>
-      )}
-      {data.base.map((category) => (
-        <React.Fragment key={category.title}>
-          <h2 className={styles.categoryTitle}>{category.title}</h2>
-          <ul className={styles.list}>
-            {category.tacOps.map((tacOp: TacOpsCard) => (
-              <li key={tacOp.title}>
-                {
-                  <button
-                    className="btnSelect"
-                    onClick={() => openTacOp(tacOp)}
-                  >
-                    {tacOp.title}
-                  </button>
-                }
-                {selectable && selectedCards.includes(tacOp.title) && (
-                  <span>✔</span>
-                )}
-              </li>
-            ))}
-          </ul>
         </React.Fragment>
       ))}
-    </div>
+    </>
   );
 }

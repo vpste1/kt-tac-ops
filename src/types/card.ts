@@ -5,7 +5,7 @@ export interface TacOpsAction {
   text: string;
 }
 
-export interface TacOpsCard {
+export interface TacOpsCardData {
   title: string;
   text: string;
   points: string[];

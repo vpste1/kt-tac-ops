@@ -1,44 +1,37 @@
 import React from "react";
-import { useSelectedCards } from "../../context/selected-cards-context";
+import { TacOpsCardData } from "../../types/card";
 import { insertShapes } from "../../utils/insert-shapes";
 import styles from "./tac-ops-card.module.css";
 
-interface TacOpsAction {
-  title: string;
-  pretext: string;
-  cost: string;
-  text: string;
-}
-
-interface TacOpsCard {
-  title: string;
-  text: string;
-  points: string[];
-  actions?: TacOpsAction[];
-}
-
 interface TacOpsCardProperties {
-  cardInfo: TacOpsCard;
+  cardInfo: TacOpsCardData;
   onClose: () => void;
-  selectable: boolean;
+  onSetCards?: (newList: TacOpsCardData[]) => void;
+  currentCardSelection?: TacOpsCardData[];
 }
 
 export function TacOpsCard({
   cardInfo,
   onClose,
-  selectable,
+  onSetCards,
+  currentCardSelection,
 }: TacOpsCardProperties) {
-  const { selectedCards, setSelectedCards } = useSelectedCards();
-  const isSelected = selectable && selectedCards.includes(cardInfo.title);
+  const isSelected =
+    currentCardSelection &&
+    currentCardSelection.map((card) => card.title).includes(cardInfo.title);
+
   const toggleCardSelection = () => {
     if (isSelected) {
       // remove card
-      setSelectedCards(
-        selectedCards.filter((storedTitle) => storedTitle !== cardInfo.title)
+      const index = currentCardSelection.findIndex(
+        (card: TacOpsCardData) => card.title === cardInfo.title
       );
+      const selectedCards = [...currentCardSelection];
+      selectedCards.splice(index, 1);
+      onSetCards(selectedCards);
     } else {
       // add card
-      setSelectedCards([...selectedCards, cardInfo.title]);
+      onSetCards([...currentCardSelection, cardInfo]);
     }
     onClose();
   };
@@ -67,9 +60,9 @@ export function TacOpsCard({
         <button className="btnCancel" onClick={onClose}>
           CLOSE
         </button>
-        {selectable && (
+        {onSetCards && (
           <button className="btnProceed" onClick={toggleCardSelection}>
-            {isSelected ? "REMOVE" : "ADD TO DECK"}
+            {isSelected ? "REMOVE" : "SELECT"}
           </button>
         )}
       </div>

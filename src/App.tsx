@@ -6,14 +6,17 @@ import { Create } from "./pages/create";
 import "./App.css";
 import { ViewedCardProvider } from "./context/view-card-context";
 import { SelectedCardsProvider } from "./context/selected-cards-context";
+import { DrawnCardsProvider } from "./context/drawn-cards-context";
 
 const App = () => (
   <Switch>
     <ViewedCardProvider>
       <SelectedCardsProvider>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/browse" component={Browse} />
-        <Route exact path="/create" component={Create} />
+        <DrawnCardsProvider>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/browse" component={Browse} />
+          <Route exact path="/create" component={Create} />
+        </DrawnCardsProvider>
       </SelectedCardsProvider>
     </ViewedCardProvider>
   </Switch>

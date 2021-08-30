@@ -2,7 +2,14 @@
   list-style: none;
 }
 
+.setTitle {
+  padding: 0 12px;
+  color: white;
+  background-color: var(--c-grey);
+}
+
 .categoryTitle {
   color: white;
+  padding: 0 12px;
   background-color: var(--c-orange);
 }

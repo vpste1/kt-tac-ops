@@ -8,20 +8,11 @@ export function Create() {
   const { viewedCard, setViewedCard } = useViewedCard();
   return (
     <div>
-      {viewedCard && (
-        <TacOpsCard
-          cardInfo={viewedCard}
-          onClose={() => setViewedCard(null)}
-          selectable
-        />
-      )}
-      <>
-        <div className="pageHeader">
-          <h1>CREATE</h1>
-          <Link to="/">Back</Link>
-        </div>
-        <DeckCreationWizard />
-      </>
+      <div className="pageHeader">
+        <h1>CREATE</h1>
+        <Link to="/">Back</Link>
+      </div>
+      <DeckCreationWizard />
     </div>
   );
 }

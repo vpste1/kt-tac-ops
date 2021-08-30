@@ -6,11 +6,11 @@ import React, {
   useContext,
 } from "react";
 
-import { TacOpsCard } from "../types/card";
+import { TacOpsCardData } from "../types/card";
 
 type ViewedCardContextValues = {
-  viewedCard: TacOpsCard | null;
-  setViewedCard: Dispatch<SetStateAction<TacOpsCard | null>>;
+  viewedCard: TacOpsCardData | null;
+  setViewedCard: Dispatch<SetStateAction<TacOpsCardData | null>>;
 };
 
 type ViewedCardProviderProperties = {
@@ -28,7 +28,7 @@ export function useViewedCard() {
 }
 
 export function ViewedCardProvider({ children }: ViewedCardProviderProperties) {
-  const [viewedCard, setViewedCard] = useState<TacOpsCard | null>(null);
+  const [viewedCard, setViewedCard] = useState<TacOpsCardData | null>(null);
   return (
     <ViewedCardContext.Provider value={{ viewedCard, setViewedCard }}>
       {children}
