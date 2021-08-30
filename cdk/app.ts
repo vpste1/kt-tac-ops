@@ -8,6 +8,7 @@ const app = new cdk.App();
 
 new KtTacOpsStack(app, "KtTacOpsSite", {
   env: {
+    account: "871688412327",
     region: "ap-southeast-2",
   },
 });
