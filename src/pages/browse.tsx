@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "./browse.module.css";
 import tacOps from "../assets/tac-ops-cards.json";
 import { TacOpsCard } from "../features/cards/tac-ops-card";
 import { TacOpsList } from "../features/cards/tac-ops-list";
@@ -12,13 +13,12 @@ export function Browse() {
       {viewedCard ? (
         <TacOpsCard cardInfo={viewedCard} onClose={() => setViewedCard(null)} />
       ) : (
-        <>
-          <div className="pageHeader">
-            <h1>BROWSE</h1>
-            <Link to="/">Back</Link>
-          </div>
+        <div className={styles.container}>
+          <h1>BROWSE</h1>
+          <Link to="/">Back</Link>
+
           <TacOpsList data={tacOps} />
-        </>
+        </div>
       )}
     </div>
   );

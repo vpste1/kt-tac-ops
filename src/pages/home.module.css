@@ -1,0 +1,30 @@
+.container {
+  padding: 28px;
+}
+
+.navigation {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.navigation > li {
+  padding: 40px;
+}
+
+.savedDeckList {
+  padding: 40px 0;
+  text-align: center;
+  list-style: none;
+}
+
+.cardSelect {
+  height: 60px;
+  width: 80%;
+  margin: 8px;
+  font-size: 20px;
+}
+
+.viewDeckContainer {
+  text-align: center;
+}

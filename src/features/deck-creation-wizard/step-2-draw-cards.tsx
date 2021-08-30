@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDrawnCards } from "../../context/drawn-cards-context";
 import { useSelectedCards } from "../../context/selected-cards-context";
 import { useViewedCard } from "../../context/view-card-context";
@@ -10,7 +10,11 @@ export function Step2DrawCards({ onNext }) {
   const { viewedCard, setViewedCard } = useViewedCard();
   const { selectedCards } = useSelectedCards();
   const { drawnCards, setDrawnCards } = useDrawnCards();
-  const [shuffledCards] = useState(shuffleArray([...selectedCards]));
+  const [shuffledCards, setShuffledCards] = useState([]);
+
+  useEffect(() => {
+    setShuffledCards(shuffleArray([...selectedCards]));
+  }, [selectedCards]);
 
   return viewedCard ? (
     <TacOpsCard
@@ -22,10 +26,9 @@ export function Step2DrawCards({ onNext }) {
   ) : (
     <WizardStep onNext={onNext} onNextDisabled={drawnCards.length < 3}>
       <h2>Draw cards</h2>
-      {drawnCards.map((card) => (
-        <div>{card.title}</div>
-      ))}
-      {drawnCards.length < 3 ? (
+      {drawnCards.length > 0 &&
+        drawnCards.map((card) => <div>{card.title}</div>)}
+      {drawnCards.length < 3 && shuffledCards.length === 6 ? (
         <div>
           <button
             className="btnSelect"

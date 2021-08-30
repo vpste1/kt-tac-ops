@@ -3,6 +3,12 @@ import styles from "./tac-ops-list.module.css";
 import { useViewedCard } from "../../context/view-card-context";
 import { TacOpsCardData } from "../../types/card";
 import { useSelectedCards } from "../../context/selected-cards-context";
+
+interface TacOpsListProperties {
+  data: any;
+  selectable?: boolean;
+}
+
 export function TacOpsList({ data, selectable }) {
   const { setViewedCard } = useViewedCard();
   const { selectedCards } = useSelectedCards();

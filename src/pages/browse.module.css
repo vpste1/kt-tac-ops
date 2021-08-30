@@ -1,0 +1,4 @@
+.container > h1,
+.container > a {
+  padding: 0 28px;
+}

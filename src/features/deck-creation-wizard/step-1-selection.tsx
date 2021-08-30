@@ -22,7 +22,6 @@ export function Step1Selection({ onNext, onBack }) {
       onNext={onNext}
       onNextDisabled={selectedCards.length < 6}
     >
-      <h2>Select cards</h2>
       {selectedCards.length > 0 && (
         <>
           Currently selected cards:

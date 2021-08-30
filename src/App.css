@@ -23,6 +23,10 @@ h3 {
   margin: 0;
 }
 
+h1 {
+  font-size: 26px;
+}
+
 a {
   color: var(--c-orange);
   font-size: 18px;
@@ -35,10 +39,6 @@ button {
   cursor: pointer;
   text-align: center;
   border: none;
-}
-
-.pageHeader {
-  padding: 0 28px;
 }
 
 .btnSelect {
