@@ -15,7 +15,7 @@ export function Step2DrawCards({ onNext }) {
 
   useEffect(() => {
     setShuffledCards(shuffleArray([...selectedCards]));
-  }, [selectedCards]);
+  }, []);
 
   return viewedCard ? (
     <TacOpsCard

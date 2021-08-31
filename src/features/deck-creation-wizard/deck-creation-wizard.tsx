@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDrawnCards } from "../../context/drawn-cards-context";
 import { Step0Instructions } from "./step-0-instructions";
@@ -16,14 +16,12 @@ export function DeckCreationWizard() {
   };
 
   const wizardDirectory = [
-    Step0Instructions({ onNext: () => setPageNumber(1) }),
-    Step1Selection({
-      onNext: () => setPageNumber(2),
-      onBack: () => setPageNumber(0),
-    }),
-    Step2DrawCards({
-      onNext: () => persistDeckAndRoute(),
-    }),
+    <Step0Instructions onNext={() => setPageNumber(1)} />,
+    <Step1Selection
+      onNext={() => setPageNumber(2)}
+      onBack={() => setPageNumber(0)}
+    />,
+    <Step2DrawCards onNext={() => persistDeckAndRoute()} />,
   ];
 
   return wizardDirectory[pageNumber];
