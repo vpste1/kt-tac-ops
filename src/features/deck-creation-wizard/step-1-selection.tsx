@@ -42,7 +42,7 @@ export function Step1Selection({ onNext, onBack }) {
       {selectedCards.length < 6 ? (
         <>
           <p>Select 6 cards from the following list:</p>
-          <TacOpsList data={tacOps} selectable />{" "}
+          <TacOpsList data={tacOps} selectable />
         </>
       ) : (
         <p>Please review before committing to the next step!</p>

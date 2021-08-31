@@ -6,12 +6,13 @@ import { useViewedCard } from "../../context/view-card-context";
 import { shuffleArray } from "../../utils/shuffle-array";
 import { TacOpsCard } from "../cards/tac-ops-card";
 import { WizardStep } from "./wizard-step";
+import { TacOpsCardData } from "../../types/card";
 
 export function Step2DrawCards({ onNext }) {
   const { viewedCard, setViewedCard } = useViewedCard();
   const { selectedCards } = useSelectedCards();
   const { drawnCards, setDrawnCards } = useDrawnCards();
-  const [shuffledCards, setShuffledCards] = useState([]);
+  const [shuffledCards, setShuffledCards] = useState<TacOpsCardData[]>([]);
 
   useEffect(() => {
     setShuffledCards(shuffleArray([...selectedCards]));
@@ -27,8 +28,16 @@ export function Step2DrawCards({ onNext }) {
   ) : (
     <WizardStep onNext={onNext} onNextDisabled={drawnCards.length < 3}>
       <h2>Draw cards</h2>
-      {drawnCards.length > 0 &&
-        drawnCards.map((card) => <div>{card.title}</div>)}
+      {drawnCards.length > 0 && (
+        <div>
+          Previously drawn cards:
+          <ul>
+            {drawnCards.map((card) => (
+              <li key={card.title}>{card.title}</li>
+            ))}
+          </ul>
+        </div>
+      )}
       {drawnCards.length < 3 && shuffledCards.length === 6 ? (
         <div className={styles.selectionContainer}>
           <button

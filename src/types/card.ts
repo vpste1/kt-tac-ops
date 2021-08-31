@@ -1,13 +1,13 @@
-export interface TacOpsAction {
+export type TacOpsAction = {
   title: string;
   pretext: string;
   cost: string;
   text: string;
-}
+};
 
-export interface TacOpsCardData {
+export type TacOpsCardData = {
   title: string;
   text: string;
   points: string[];
   actions?: TacOpsAction[];
-}
+};

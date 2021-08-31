@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import styles from "./home.module.css";
 import { useViewedCard } from "../context/view-card-context";
 import { TacOpsCard } from "../features/cards/tac-ops-card";
+import { TacOpsCardData } from "../types/card";
 
 export function Home() {
-  const [savedDeck, setSavedDeck] = useState(null);
+  const [savedDeck, setSavedDeck] = useState<TacOpsCardData[] | null>(null);
   const { viewedCard, setViewedCard } = useViewedCard();
   useEffect(() => {
-    const deck = JSON.parse(localStorage.getItem("drawnDeck"));
+    const deck = JSON.parse(
+      localStorage.getItem("drawnDeck")
+    ) as TacOpsCardData[];
     setSavedDeck(deck);
   }, []);
   const clearSavedDeck = () => {
