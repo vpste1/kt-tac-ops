@@ -63,7 +63,7 @@
             "text": "Reveal this Tac Op in the Target Reveal step of the first Turning Point. Select one terrain feature that is more than --SQUARE-- from your drop zone and includes any parts with the Heavy trait.",
             "points": [
               "At the end of the battle, if the total APL of friendly operatives within --TRIANGLE-- of that terrain feature is greater than that of enemy operatives, you score 1VP.",
-              "If you achieve the first condition, thre are no enemy operatives on or within --TRIANGLE-- of that terrain feature, and the total APL of friendly operatives wthin --TRIANGLE-- of that terrain feature is 4 or more, you score 1VP."
+              "If you achieve the first condition, there are no enemy operatives on or within --TRIANGLE-- of that terrain feature, and the total APL of friendly operatives within --TRIANGLE-- of that terrain feature is 4 or more, you score 1VP."
             ]
           },
           {
@@ -155,7 +155,7 @@
             "title": "IMPLANT",
             "text": "You can reveal this Tac Op when you would strike an operative in combat.",
             "points": [
-              "Instead of inflicting damage on an enemy opertaive from that strike, you can implant that operative instead. That operative does not lose any wounds from that strike and you score 1VP.",
+              "Instead of inflicting damage on an enemy operative from that strike, you can implant that operative instead. That operative does not lose any wounds from that strike and you score 1VP.",
               "If two other enemy operatives are implanted you score 1VP."
             ]
           },
@@ -171,7 +171,7 @@
                 "title": "SABOTAGE",
                 "pretext": "Friendly operatives can perform the following mission action:",
                 "cost": "2AP",
-                "text": "An operative can perform this action while within --TRIANGLE-- a terrain feature that includes an parts with the Heavy traitm that is wholy within or within --PENTAGON-- of your opponent's drop zone that has not been sabotaged by friendly operatives. An operative cannot perform this action while within --CIRCLE-- of enemy operatives. If this action is performed by friendly operativesm that terrain feature has been sabotaged by friendly operatives."
+                "text": "An operative can perform this action while within --TRIANGLE-- a terrain feature that includes an parts with the Heavy trait, that is wholly within or within --PENTAGON-- of your opponent's drop zone that has not been sabotaged by friendly operatives. An operative cannot perform this action while within --CIRCLE-- of enemy operatives. If this action is performed by friendly operatives, that terrain feature has been sabotaged by friendly operatives."
               }
             ]
           },
@@ -230,7 +230,7 @@
                 "title": "PLANT SIGNAL BEACON",
                 "pretext": "Once per battle, a friendly operative can perform the following mission action:",
                 "cost": "2AP",
-                "text": "Place signal beacon token within --TRIANGLE-- of this operative. An operative cannot perform this action while within --CIRCLE-- of enemy operatives. If any enemy oepratives finish a move within --TRIANGLE-- of the centre of your signal beacon token and more than --CIRCLE-- from friendly operatives, remove that signal beacon token."
+                "text": "Place signal beacon token within --TRIANGLE-- of this operative. An operative cannot perform this action while within --CIRCLE-- of enemy operatives. If any enemy operatives finish a move within --TRIANGLE-- of the centre of your signal beacon token and more than --CIRCLE-- from friendly operatives, remove that signal beacon token."
               }
             ]
           },
@@ -280,7 +280,7 @@
             "title": "BOOTS ON THE GROUND",
             "text": "You can reveal this Tac Op at the end of any Turning Point.",
             "points": [
-              "At the end of that Turning Point, if there are more friendly operativess than enemy operatives within --PENTAGON-- of your drop zone, and there are more friendly operatives than enemy opertives within --PENTAGON-- of your opponent's drop zone, you score 1VP.",
+              "At the end of that Turning Point, if there are more friendly operatives than enemy operatives within --PENTAGON-- of your drop zone, and there are more friendly operatives than enemy operatives within --PENTAGON-- of your opponent's drop zone, you score 1VP.",
               "If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP."
             ]
           },
