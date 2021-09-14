@@ -336,6 +336,35 @@
             ]
           }
         ]
+      },
+      {
+        "title": "HUNTER CLADE",
+        "tacOps": [
+          {
+            "title": "RELENTLESS PURSUIT",
+            "text": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.",
+            "points": [
+              "At the end of any Turning Point, if there are no enemy operatives in the killzone more than --PENTAGON-- from friendly operatives, you score 1VP.",
+              "If you achieve the first condition in any subsequent Turning Points, you score 1VP."
+            ]
+          },
+          {
+            "title": "CALCULATED ERADICATION",
+            "text": "Reveal this Tac Op when a Doctrina Imperative first becomes active for your kill team.",
+            "points": [
+              "At the end of any Turning Point, if an Imperative is active for your kill team, and the total wounds lost by enemy operatives during that Turning Point is greater than that lost by friendly operatives, you score 1VP.",
+              "At the end of any Turning Point, if a different Imperative is active for your kill team, and the total wounds lost by enemy operatives during that Turning Point is greater than that lost by friendly operatives, you score 1VP."
+            ]
+          },
+          {
+            "title": "ASSASSINATION ORDER",
+            "text": "Reveal this Tac Op in the Target Reveal step of the first Turning Point. Your opponent selects one of their operatives",
+            "points": [
+              "If that enemy operative is incapacitated before the fourth Turning Point, you score 1VP.",
+              "If the first condition is achieved by a friendly HUNTER CLADE operative within --SQUARE-- of that enemy operative, you score 1VP."
+            ]
+          }
+        ]
       }
     ]
   }
