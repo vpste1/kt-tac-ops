@@ -365,6 +365,146 @@
             ]
           }
         ]
+      },
+      {
+        "title": "NOVITIATE",
+        "tacOps": [
+          {
+            "title": "PURGE WITH FLAME",
+            "text": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.",
+            "points": [
+              "If two or more enemy operatives are incapacitated by attacks made by weapons with the Inferno X critical hit rule, you score 1VP.",
+              "If an enemy LEADER operative is incapacitated by an attack made by a weapon with the Inferno x critical hit rule, you score 1VP."
+            ]
+          },
+          {
+            "title": "RECONSECRATE GROUND",
+            "text": "Reveal this Tac Op in the Target Reveal step of the first Turning Point. Select one objective marker that is not within --PENTAGON-- of your drop zone:",
+            "points": [
+              "At the end of any Turning Point, if friendly operatives control that objective marker, you score 1VP.",
+              "At the end of the battle, if friendly operatives control that objective marker, you score 1VP."
+            ]
+          },
+          {
+            "title": "GLORY TO THE MARTYRS",
+            "text": "Reveal this Tac Op when a friendly operative is incapacitated while within --CIRCLE-- of the centre of an objective marker.",
+            "points": [
+              "If another friendly operative is incapacitated while within --CIRCLE-- of the centre of that objective marker, you score 1VP.",
+              "If you achieve the first condition in any subsequent Turning Points, you score 1VP."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "WARPCOVEN",
+        "tacOps": [
+          {
+            "title": "SCRY SECRET",
+            "text": "Reveal this Tac Op in the Target Reveal step of the first Turning Point. Your opponent selects one of their operatives to be holding a secret.",
+            "points": [
+              "If a friendly operative performs the Scry Secret action, you score 1VP.",
+              "At the end of the battle, if a friendly operative has performed the Scry Secret action and has not been incapacitated, you score 1VP."
+            ],
+            "actions": [
+              {
+                "title": "SCRY SECRET",
+                "pretext": "Friendly SORCERER operatives can perform the following mission action:",
+                "cost": "1AP",
+                "text": "Psychic action. An operative can perform this action while within --PENTAGON-- of the enemy operative holding a secret. An operative cannot perform this action while within Engagement Range of an enemy operative. Your kill team can only perform this action once."
+              }
+            ]
+          },
+          {
+            "title": "SORCEROUS RITUAL",
+            "text": "Reveal this Tac Op when a friendly operative performs the Sorcerous Ritual action.",
+            "points": [
+              "If a friendly operative performs the Sorcerous Ritual action in two or more Turning Points, you score 1VP.",
+              "If a friendly operative performs the Sorcerous Ritual action in three or more Turning Points, you score 1VP."
+            ],
+            "actions": [
+              {
+                "title": "SORCEROUS RITUAL",
+                "pretext": "Friendly SORCERER operatives can perform the following mission action:",
+                "cost": "2AP",
+                "text": "Psychic action. An operative can perform this action while within --CIRCLE-- of a ritual site. An operative cannot perform this action while within --CIRCLE-- of an enemy operative. A ritual site is the centre of the killzone or an objective marker that is more than --PENTAGON-- from your drop zone. Once a friendly operative performs this action, friendly operatives can only perform this action again at the same ritual site."
+              }
+            ]
+          },
+          {
+            "title": "GRAND PLAN",
+            "text": "Reveal this Tac Op in the Target Reveal step of the first Turning Point. Your opponent selects one of their operatives and an objective marker that is more than --PENTAGON-- from their killzone edge (they cannot select an objective marker that can be removed during the battle).",
+            "points": [
+              "If that enemy operative is incapacitated, you score 1VP.",
+              "If you control that objective marker at the end of any Turning Point, you score 1VP."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "WYRMBLADE",
+        "tacOps": [
+          {
+            "title": "NOWHERE UNREACHABLE",
+            "text": "Reveal this Tac Op in the Target Reveal step of the first Turning Point. Your opponent places one of your Location tokens anywhere in the killzone that is more than --PENTAGON-- from their drop zone.",
+            "points": [
+              "At the end of any Turning Point, if a friendly operative is within --TRIANGLE-- of that location token, you score 1 VP.",
+              "If you achieve the first condition at the end of any subsequent Turning Points, you score 1VP."
+            ]
+          },
+          {
+            "title": "PERFECT AMBUSH",
+            "text": "Reveal this Tac Op in the Target Reveal step of any Turning Point before the fourth. Keep a tally of wounds lost by each player's operatives during that Turning Point. At the end of that Turning Point:",
+            "points": [
+              "If the total wounds lost by enemy operatives during that Turning Point is greater than that lost by friendly operatives during that Turning Point, you score 1VP.",
+              "If the total wounds lost by enemy operatives during that Turning Point as a result of friendly CULT AGENT operatives (shooting attacks they make or combats they fight in) is greater than the total number of wounds lost by friendly operatives during that Turning Point, you score 1VP."
+            ]
+          },
+          {
+            "title": "MARK FOR ASSASSINATION",
+            "text": "Reveal this Tac Op in the Target Reveal step of any Turning Point.",
+            "points": [
+              "If an enemy operative with a Marked token is incapacitated, you score 1VP.",
+              "If another enemy operative with a Marked token is incapacitated, you score 1VP."
+            ],
+            "actions": [
+              {
+                "title": "MARK FOR ASSASSINATION",
+                "pretext": "Friendly NEOPHYTE operatives can perform the following mission action:",
+                "cost": "1AP",
+                "text": "An operative can perform this action while an enemy operative with a Group Activation characteristic of 1 is Visible to and within --SQUARE-- of it. That enemy operative gains a Marked token. An operative cannot perform this action while within Engagement Range of an enemy operative, or if another friendly operative has performed this action during this Turning Point."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "PATHFINDER",
+        "tacOps": [
+          {
+            "title": "MARK ENEMY MOVEMENTS",
+            "text": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.",
+            "points": [
+              "At the end of any Turning Point, if at least half of the enemy operatives in the killzone (rounding down and a minimum of 3 enemy operatives) have one or more markerlight tokens, you score 1VP.",
+              "If you achieve the first condition in any subsequent Turning Points, you score 1VP."
+            ]
+          },
+          {
+            "title": "PATIENT HUNTER",
+            "text": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.",
+            "points": [
+              "At the end of any Turning Point, if you scored more victory points than your opponent for the mission objective during that Turning Point, and more than half of your operatives (rounding down) have a Conceal order, you score 1VP.",
+              "If you achieve the first condition in any subsequent Turning Points, you score 1VP."
+            ]
+          },
+          {
+            "title": "KILLING BLOW",
+            "text": "You can reveal this Tac Op in the Target Reveal step of any Turning Point.",
+            "points": [
+              "At the end of any Turning Point, if the total Wounds characteristic of enemy operatives that were incapacitated during that Turning Point is greater than the total Wounds characteristic of friendly operatives that were incapacitated during that Turning Point, and more than half of your operatives (rounding down) have an Engage order, you score 1VP.",
+              "If you achieve the first condition in any subsequent Turning Points, you score 1VP."
+            ]
+          }
+        ]
       }
     ]
   }
