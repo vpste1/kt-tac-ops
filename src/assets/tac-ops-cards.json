@@ -505,6 +505,82 @@
             ]
           }
         ]
+      },
+      {
+        "title": "LEGIONARY",
+        "tacOps": [
+          {
+            "title": "SACRILEGIOUS MUTILATION",
+            "text": "Reveal this Tac Op the first time an enemy operative is incapacitated, before it is removed from the killzone, place one of your Enemy Corpse tokens underneath the operative as close as possible to the centre of its base.",
+            "points": [
+              "The second time a friendly operative performs the Defiled For The Dark Gods action, you score 1VP.",
+              "The fourth time a friendly operative performs the Defiled For The Dark Gods action, you score 1VP."
+            ],
+            "actions": [
+              {
+                "title": "DEFILED FOR THE DARK GODS",
+                "pretext": "Friendly operatives can perform the following mission action:",
+                "cost": "1AP",
+                "text": "An operative can perform this action while within --TRIANGLE-- of one of your Enemy Corpse tokens. An operative cannot perform this action while within --CIRCLE-- of an enemy operative. Remove that Enemy Corpse token from the killzone."
+              }
+            ]
+          },
+          {
+            "title": "DARK DESECRATION",
+            "text": "Reveal this Tac Op in the Target Reveal step of the first Turning Point. Select one terrain feature that includes any parts with the Heavy trait.",
+            "points": [
+              "If two or more enemy operatives are incapacitated while within --TRIANGLE-- of that terrain feature, you score 1VP.",
+              "If you achieve the first condition at the end of the battle the total APL of friendly operatives within --TRIANGLE-- of that terrain feature is greater than that of enemy operatives, you score 1VP."
+            ]
+          },
+          {
+            "title": "SAVAGE BUTCHER",
+            "text": "You can reveal this Tac Op in the Target Reveal step of any Turning Point. Select one friendly operative.",
+            "points": [
+              "If two or more enemy operatives are incapacitated in combat by that friendly operative, you score 1VP.",
+              "If three or more enemy operatives are incapacitated in combat by that friendly operative, you score 1VP."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "CORSAIR VOIDSCARRED",
+        "tacOps": [
+          {
+            "title": "FLAWLESS RAID",
+            "text": "You can reveal this Tac Op in the Target Reveal step of any Turning Point after the second.",
+            "points": [
+              "If you had more victory points than your opponent at the start of the Turning Point, you score 1VP",
+              "If you achieve the first condition at the start of the subsequent Turning Point, you score 1VP."
+            ]
+          },
+          {
+            "title": "SOUL GUARD",
+            "text": "Reveal this Tac Op in the Target Reveal step of the first Turning Point. Each time a friendly Corsair Voidscarred operative is incapacitated, before it is removed from the killzone, place one of your Spirit Stone tokens underneath the operative as close as possible to the centre of its base.",
+            "actions": [
+              {
+                "title": "PICK UP",
+                "pretext": "Friendly operatives can perform the following action:",
+                "cost": "1AP",
+                "text": "Operatives can carry any number of Spirit Stone tokens and your Spirit Stone tokens can be picked up by friendly operatives while within Engagement Range of an enemy operative."
+              }
+            ],
+            "points": [
+              "At the end of the battle, if no friendly operatives have been incapacitated, you score 2VPs",
+              "Otherwise:",
+              "At the end of the battle, if friendly operatives are carrying at least half of your Spirit Stone tokens, you score 1VP",
+              "At the end of the battle, if friendly operatives are carrying all of your Spirit Stone tokens, you score 1VP"
+            ]
+          },
+          {
+            "title": "OPPORTUNISTS",
+            "text": "Reveal this Tac Op in the Target Reveal step of the first Turning Point. Select three enemy operatives. Each time one of those operatives is incapacitated, before it is removed from the killzone, place one of your Loot tokens underneath the operative as close as possible to the centre of its base. The Pick Up action can be performed upon your Loot tokens by friendly operatives. Operatives can carry any number of Loot tokens",
+            "points": [
+              "At the end of the battle, if friendly operatives are carrying one or more of your Loot tokens, you score 1VP.",
+              "At the end of the battle, if friendly operatives are carrying three of your loot tokens, you score 1VP."
+            ]
+          }
+        ]
       }
     ]
   }
