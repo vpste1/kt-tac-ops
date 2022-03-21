@@ -6,35 +6,16 @@ import styles from "./tac-ops-card.module.css";
 interface TacOpsCardProperties {
   cardInfo: TacOpsCardData;
   onClose: () => void;
-  onSetCards?: (newList: TacOpsCardData[]) => void;
-  currentCardSelection?: TacOpsCardData[];
+  onToggleSelect?: (card: TacOpsCardData) => void;
+  isSelected?: boolean;
 }
 
 export function TacOpsCard({
   cardInfo,
   onClose,
-  onSetCards,
-  currentCardSelection,
+  onToggleSelect,
+  isSelected,
 }: TacOpsCardProperties) {
-  const isSelected =
-    currentCardSelection &&
-    currentCardSelection.map((card) => card.title).includes(cardInfo.title);
-
-  const toggleCardSelection = () => {
-    if (isSelected) {
-      // remove card
-      const index = currentCardSelection.findIndex(
-        (card: TacOpsCardData) => card.title === cardInfo.title
-      );
-      const selectedCards = [...currentCardSelection];
-      selectedCards.splice(index, 1);
-      onSetCards(selectedCards);
-    } else {
-      // add card
-      onSetCards([...currentCardSelection, cardInfo]);
-    }
-    onClose();
-  };
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{cardInfo.title}</h2>
@@ -60,8 +41,8 @@ export function TacOpsCard({
         <button className="btnCancel" onClick={onClose}>
           CLOSE
         </button>
-        {onSetCards && (
-          <button className="btnProceed" onClick={toggleCardSelection}>
+        {onToggleSelect && (
+          <button className="btnProceed" onClick={() => onToggleSelect(cardInfo)}>
             {isSelected ? "REMOVE" : "SELECT"}
           </button>
         )}

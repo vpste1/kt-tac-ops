@@ -7,6 +7,7 @@ import { shuffleArray } from "../../utils/shuffle-array";
 import { TacOpsCard } from "../cards/tac-ops-card";
 import { WizardStep } from "./wizard-step";
 import { TacOpsCardData } from "../../types/card";
+import { toggleCardSelection } from '../../utils/toggle-card-selection'
 
 export function Step2DrawCards({ onNext }) {
   const { viewedCard, setViewedCard } = useViewedCard();
@@ -18,12 +19,17 @@ export function Step2DrawCards({ onNext }) {
     setShuffledCards(shuffleArray([...selectedCards]));
   }, []);
 
+  const onCardToggleSelection = (card) => {
+    toggleCardSelection(card, drawnCards, setDrawnCards)
+    setViewedCard(null)
+  }
+
   return viewedCard ? (
     <TacOpsCard
       cardInfo={viewedCard}
       onClose={() => setViewedCard(null)}
-      onSetCards={(cards) => setDrawnCards(cards)}
-      currentCardSelection={drawnCards}
+      onToggleSelect={onCardToggleSelection}
+      isSelected={drawnCards.findIndex(c => c.title === viewedCard.title) > -1}
     />
   ) : (
     <WizardStep onNext={onNext} onNextDisabled={drawnCards.length < 3}>

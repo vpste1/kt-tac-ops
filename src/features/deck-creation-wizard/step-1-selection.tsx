@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import tacOps from "../../assets/tac-ops-cards.json";
 import { useSelectedCards } from "../../context/selected-cards-context";
 import { useViewedCard } from "../../context/view-card-context";
 import { TacOpsCard } from "../cards/tac-ops-card";
 import { TacOpsList } from "../cards/tac-ops-list";
 import { WizardStep } from "./wizard-step";
+import { toggleCardSelection } from '../../utils/toggle-card-selection'
 
 export function Step1Selection({ onNext, onBack }) {
   const { viewedCard, setViewedCard } = useViewedCard();
   const { selectedCards, setSelectedCards } = useSelectedCards();
+
+  const onCardToggleSelection = (card) => {
+    toggleCardSelection(card, selectedCards, setSelectedCards)
+    setViewedCard(null)
+  }
+
   return viewedCard ? (
     <TacOpsCard
       cardInfo={viewedCard}
       onClose={() => setViewedCard(null)}
-      onSetCards={(newList) => setSelectedCards(newList)}
-      currentCardSelection={selectedCards}
+      onToggleSelect={onCardToggleSelection}
+      isSelected={selectedCards.findIndex(c => c.title === viewedCard.title) > -1}
     />
   ) : (
     <WizardStep
@@ -42,7 +49,7 @@ export function Step1Selection({ onNext, onBack }) {
       {selectedCards.length < 6 ? (
         <>
           <p>Select 6 cards from the following list:</p>
-          <TacOpsList data={tacOps} selectable />
+          <TacOpsList data={tacOps} selectable onCardToggleSelection={onCardToggleSelection} />
         </>
       ) : (
         <p>Please review before committing to the next step!</p>

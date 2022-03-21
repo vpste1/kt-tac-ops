@@ -7,13 +7,13 @@ import { TacOpsData } from "../../types/tac-ops-data";
 
 interface TacOpsListProperties {
   data: TacOpsData;
-  selectable?: boolean;
+  onCardToggleSelection?: (card:TacOpsCardData) => void;
 }
 
-export function TacOpsList({ data, selectable }: TacOpsListProperties) {
+export function TacOpsList({ data, onCardToggleSelection }: TacOpsListProperties) {
   const { setViewedCard } = useViewedCard();
-  const { selectedCards } = useSelectedCards();
-  const openTacOp = (card: TacOpsCardData) => {
+  const { selectedCards, setSelectedCards } = useSelectedCards();
+  const openCard = (card: TacOpsCardData) => {
     setViewedCard(card);
   };
   return (
@@ -25,20 +25,27 @@ export function TacOpsList({ data, selectable }: TacOpsListProperties) {
             <React.Fragment key={category.title}>
               <h3 className={styles.categoryTitle}>{category.title}</h3>
               <ul className={styles.list}>
-                {category.tacOps.map((tacOp: TacOpsCardData) => (
-                  <li key={tacOp.title}>
+                {category.tacOps.map((card: TacOpsCardData) => (
+                  <li key={card.title}>
                     {
                       <button
                         className="btnSelect"
-                        onClick={() => openTacOp(tacOp)}
+                        onClick={() => openCard(card)}
                       >
-                        {tacOp.title}
+                        {card.title}
                       </button>
                     }
-                    {selectable &&
-                      selectedCards
-                        .map((card) => card.title)
-                        .includes(tacOp.title) && <span>✔</span>}
+                    {
+                      onCardToggleSelection &&
+                        <input
+                          type="checkbox"
+                          onClick={() => onCardToggleSelection(card)}
+                          checked={
+                            selectedCards
+                              .map((c) => c.title)
+                              .includes(card.title)}
+                        />
+                    }
                   </li>
                 ))}
               </ul>
