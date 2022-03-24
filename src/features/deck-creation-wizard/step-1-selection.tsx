@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import tacOps from "../../assets/tac-ops-cards.json";
 import { useSelectedCards } from "../../context/selected-cards-context";
 import { useViewedCard } from "../../context/view-card-context";
@@ -8,18 +8,28 @@ import { WizardStep } from "./wizard-step";
 import { toggleCardSelection } from '../../utils/toggle-card-selection'
 
 export function Step1Selection({ onNext, onBack }) {
+  const [ scrollPosition, setScrollPosition ] = useState(0);
   const { viewedCard, setViewedCard } = useViewedCard();
   const { selectedCards, setSelectedCards } = useSelectedCards();
 
-  const onCardToggleSelection = (card) => {
-    toggleCardSelection(card, selectedCards, setSelectedCards)
+  const onOpenCard = (card) => {
+    setScrollPosition(window.scrollY);
+    setViewedCard(card);
+  }
+
+  const onCloseCard = () => {
     setViewedCard(null)
+  }
+
+  const onCardToggleSelection = (card) => {
+    toggleCardSelection(card, selectedCards, setSelectedCards);
+    setViewedCard(null);
   }
 
   return viewedCard ? (
     <TacOpsCard
       cardInfo={viewedCard}
-      onClose={() => setViewedCard(null)}
+      onClose={onCloseCard}
       onToggleSelect={onCardToggleSelection}
       isSelected={selectedCards.findIndex(c => c.title === viewedCard.title) > -1}
     />
@@ -37,7 +47,7 @@ export function Step1Selection({ onNext, onBack }) {
               <li key={card.title}>
                 <button
                   className="btnSelect"
-                  onClick={() => setViewedCard(card)}
+                  onClick={() => onOpenCard(card)}
                 >
                   {card.title}
                 </button>
@@ -49,7 +59,7 @@ export function Step1Selection({ onNext, onBack }) {
       {selectedCards.length < 6 ? (
         <>
           <p>Select 6 cards from the following list:</p>
-          <TacOpsList data={tacOps} selectable onCardToggleSelection={onCardToggleSelection} />
+          <TacOpsList data={tacOps} onCardToggleSelection={onCardToggleSelection} onCardOpen={onOpenCard} scrollPosition={scrollPosition}/>
         </>
       ) : (
         <p>Please review before committing to the next step!</p>

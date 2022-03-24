@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./tac-ops-list.module.css";
-import { useViewedCard } from "../../context/view-card-context";
 import { TacOpsCardData } from "../../types/card";
 import { useSelectedCards } from "../../context/selected-cards-context";
 import { TacOpsData } from "../../types/tac-ops-data";
 
+
 interface TacOpsListProperties {
   data: TacOpsData;
+  onCardOpen: (card:TacOpsCardData) => void;
   onCardToggleSelection?: (card:TacOpsCardData) => void;
+  scrollPosition: number;
 }
 
-export function TacOpsList({ data, onCardToggleSelection }: TacOpsListProperties) {
-  const { setViewedCard } = useViewedCard();
-  const { selectedCards, setSelectedCards } = useSelectedCards();
-  const openCard = (card: TacOpsCardData) => {
-    setViewedCard(card);
-  };
+export function TacOpsList({ data, onCardToggleSelection, onCardOpen, scrollPosition }: TacOpsListProperties) {
+  const { selectedCards } = useSelectedCards();
+  useEffect(() => {
+    window.scrollTo(0, scrollPosition);
+  }, [scrollPosition])
   return (
     <>
       {data.map((set) => (
@@ -30,7 +31,7 @@ export function TacOpsList({ data, onCardToggleSelection }: TacOpsListProperties
                     {
                       <button
                         className="btnSelect"
-                        onClick={() => openCard(card)}
+                        onClick={() => onCardOpen(card)}
                       >
                         {card.title}
                       </button>
