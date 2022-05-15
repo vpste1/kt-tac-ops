@@ -581,6 +581,35 @@
             ]
           }
         ]
+      },
+      {
+        "title": "VOID-DANCER TROUPE",
+        "tacOps": [
+          {
+            "title": "MYTHIC PLAY",
+            "text": "If you are using the Saedath ability, reveal this Tac Op in the Target Reveal step of the first Turning Point.",
+            "points": [
+              "If your Performance tally is four or more, you score 1VP.",
+              "If your Performance tally is six or more, you score 1VP."
+            ]
+          },
+          {
+            "title": "HERO'S PATH",
+            "text": "You can reveal this Tac Op when a friendly VOID-DANCER TROUPE operative incapacitates an enemy operative. At the end of the battle:",
+            "points": [
+              "If that friendly operative has incapacitated more enemy operatives than each other friendly VOID-DANCER TROUPE operative has during the battle, you score 1VP.",
+              "If that friendly operative is wholly within your opponent's drop zone, you score 1VP."
+            ]
+          },
+          {
+            "title": "GRAND ACT",
+            "text": "You can reveal this Tac Op in the Target Reveal step of any Turning Point. When this Tac Op is revealed, start a Grand Act tally, adding one to the tally the first time each different Performance is completed by any friendly VOID-DANCER TROUPE operative. Note that it does not have to be the active Allegory’s Performance.",
+            "points": [
+              "If your Grand Act tally is five, you score 1VP.",
+              "If you achieve the first condition before the fourth Turning Point, you score 1VP."
+            ]
+          }
+        ]
       }
     ]
   }
